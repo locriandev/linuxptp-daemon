@@ -13,6 +13,8 @@ RUN source $REMOTE_SOURCES_DIR/cachito-gomod-with-deps/cachito.env && \
 
 RUN cp $REMOTE_SOURCES_DIR/cachito-gomod-with-deps/deps/pip/gitlab.com/gpsd/gpsd/* ./
 RUN tar -xvf gpsd-external-gitcommit-$GITLAB_COMMIT_SHA.tar.gz
+
+COPY $REMOTE_SOURCES $REMOTE_SOURCES_DIR
 WORKDIR $REMOTE_SOURCES_DIR/cachito-gomod-with-deps/app/app/
 
 RUN scons -c \
